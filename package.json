@@ -1,0 +1,19 @@
+{
+  "name": "hackathon-sin-webservice",
+  "version": "1.0.0",
+  "description": "Web Service usado para el proyecto presentado en Hackathon 2018",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexisDZazueta/hackathon-sin-webservice.git"
+  },
+  "author": "Alexis D. Zazueta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexisDZazueta/hackathon-sin-webservice/issues"
+  },
+  "homepage": "https://github.com/AlexisDZazueta/hackathon-sin-webservice#readme"
+}
