@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AlexisDZazueta/hackathon-sin-webservice#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "express-promise-router": "^3.0.2",
     "mongoose": "^5.0.14",
     "morgan": "^1.9.0"
   },
