@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  place: { type: String, required: true },
+  address: { type: String, required: true },
   date: { type: String, required: true },
   hour: { type: String, required: true },
   capacity: { type: Number, required: true },

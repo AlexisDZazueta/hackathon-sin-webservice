@@ -9,6 +9,7 @@ const app = express();
 // Routes variables
 const usersRoutes = require('./routes/users');
 const eventsRoutes = require('./routes/events');
+const locationsRoutes = require('./routes/locations');
 
 // DB Connection
 mongoose.connect('mongodb://localhost/hackathon-sin')
@@ -25,6 +26,7 @@ app.use(express.json());
 // Routes
 app.use('/api/users', usersRoutes);
 app.use('/api/events', eventsRoutes);
+app.use('/api/locations', locationsRoutes);
 
 // Start the server
 app.listen(app.get('port'), () => {
