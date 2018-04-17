@@ -11,8 +11,8 @@ const api = express.Router();
 // Users Routes
 api.post('/users/signup', userCtrl.signUp);
 api.post('/users/signin', userCtrl.signIn);
-api.put('/users/:userId', auth, userCtrl.updateUser);
-api.delete('/users/:userId', auth, userCtrl.deleteUser);
+api.put('/users/:userId', userCtrl.updateUser);
+api.delete('/users/:userId', userCtrl.deleteUser);
 
 // Export modules
 module.exports = api;
