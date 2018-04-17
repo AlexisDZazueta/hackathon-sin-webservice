@@ -18,7 +18,7 @@ const userSchema = new Schema({
   from: { type: String, required: true },
   signupDate: { type: Date, default: Date.now() },
   lastLogin: { type: Date },
-  events: [{ type: Schema.Types.ObjectId, ref: 'events' }],
+  events: [{ type: Schema.Types.ObjectId, ref: 'event' }],
 });
 
 // Save the pass hash instead of the pass
