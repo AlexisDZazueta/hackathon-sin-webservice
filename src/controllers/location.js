@@ -1,9 +1,10 @@
 // Create client with a Promise constructor
 const distance = require('google-distance-matrix');
-const Events = require('../models/events');
+const Events = require('../models/event');
 
 // Export modules
 module.exports = {
+
   index: async (req, res, next) => {
     const origins = [req.body.origin];
     const places = new Array();
@@ -29,4 +30,5 @@ module.exports = {
       }
     });
   }
+
 }

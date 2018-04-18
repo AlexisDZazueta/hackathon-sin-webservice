@@ -6,12 +6,12 @@ const Schema = mongoose.Schema;
 
 // Comments model schema
 const commentSchema = new Schema({
-  userName: { type: String, required: true },
+  userId: { type: Schema.Types.ObjectId, ref: 'user', required: true },
   comment: { type: String, required: true },
-  Date: { type: Date, required: true },
+  date: { type: Date, required: true, default: Date.now() },
   rate: { type: Number },
-  event: { type: Schema.Types.ObjectId, ref: 'events' }
+  eventId: { type: Schema.Types.ObjectId, ref: 'event', required: true }
 });
 
 // Export model schema
-module.exports = mongoose.model('comments', commentSchema);
+module.exports = mongoose.model('comment', commentSchema);
