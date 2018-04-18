@@ -11,9 +11,11 @@ const userRoutes = require('./routes/user');
 const commentRoutes = require('./routes/comment');
 const eventRoutes = require('./routes/event');
 const locationRoutes = require('./routes/location');
+const reservationRoutes = require('./routes/reservation');
+const placeRoutes = require('./routes/place');
 
 // DB Connection
-mongoose.connect('mongodb://localhost/hackathon-sin-webservice')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/hackathon-sin-webservice')
   .then(db => console.log(`DB is Online: ${db}`))
   .catch(err => console.log(`An error has ocurred: ${err}`));
 
@@ -29,6 +31,8 @@ app.use('/api/user', userRoutes);
 app.use('/api/comment', commentRoutes);
 app.use('/api/event', eventRoutes);
 app.use('/api/location', locationRoutes);
+app.use('/api/reservation', reservationRoutes);
+app.use('/api/place', placeRoutes);
 
 // Static files
 

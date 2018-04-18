@@ -19,11 +19,11 @@ module.exports = {
     res.status(200).json(newUser);
   },
   signIn: async (req, res) => {
-    let user = await Users.find({ email: req.body.email });
-    if(user.pass === req.body.pass){
-      res.status(200).json({ message: 'Te has logueado correctamente' });
-    }
-    res.status(200).json({ error: 'Usuario o contraseña incorrectos' });
+    let user = await Users.find({ email: req.body.email, pass: req.body.pass }, (err, user) => {
+      if(err) return res.status(500).json({ message: `Ocurrio un problema: ${err}` });
+      if(!user.length) return res.status(404).json({ message: 'Email o contraseña invalidos' });
+      res.status(200).json({ message: `Te has logueado correctamente` });
+    });
   },
   updateUser: async (req, res) => {
     let { userId } = req.params;

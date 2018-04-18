@@ -4,6 +4,7 @@
   "description": "Web Service usado para el proyecto presentado en Hackathon 2018",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js"
   },
   "repository": {

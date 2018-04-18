@@ -1,7 +1,5 @@
 // Dependencies
 const mongoose = require('mongoose');
-require('mongoose-double')(mongoose);
-
 // Schema variable
 const Schema = mongoose.Schema;
 
@@ -13,7 +11,11 @@ const eventSchema = new Schema({
   date: { type: String, required: true },
   hour: { type: String, required: true },
   capacity: { type: Number, required: true },
-  comments: [{ type: Schema.Types.ObjectId, ref: 'comment' }]
+  maxPerReservation: { type: Number, required: true },
+  mainImage: { type: String },
+  gallery: [{ type: String }],
+  comments: [{ type: Schema.Types.ObjectId, ref: 'comment' }],
+  reservations: [{ type: Schema.Types.ObjectId, ref: 'reservation' }]
 });
 
 // Export model schema

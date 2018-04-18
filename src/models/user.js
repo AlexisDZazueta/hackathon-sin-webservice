@@ -10,13 +10,12 @@ const userSchema = new Schema({
   lastName: { type: String, required: true },
   age: { type: Number, required: true },
   email: { type: String, required: true, unique: true, lowercase: true },
-  pass: { type: String, required: true },
+  pass: { type: String, required: true, select: false },
   profilePicture: { type: String, required: true },
   tel: { type: String, required: true },
   from: { type: String, required: true },
   signupDate: { type: Date, default: Date.now() },
-  lastLogin: { type: Date },
-  reservations: [{ type: Schema.Types.ObjectId, ref: 'event' }],
+  reservations: [{ type: Schema.Types.ObjectId, ref: 'reservation' }],
 });
 
 // Export model schema
